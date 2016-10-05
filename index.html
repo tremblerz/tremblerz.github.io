@@ -784,7 +784,8 @@
         			url: "//formspree.io/abhishek.s14@iiits.in", 
         			method: "POST",
         			data: {message: message},
-        			dataType: "json"
+        			dataType: "jsonp",
+        			crossDomain:true,
     				});
     		}
 
