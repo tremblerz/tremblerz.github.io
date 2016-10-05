@@ -618,7 +618,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 wow fadeInUp" data-wow-duration="1s" data-wow-offset="200">
-						<form method='POST' action="http://formspree.io/abhishek.s14@iiits.in" id='form'><input type='hidden' name='form-name' value='form' />
+						<form method='POST' id='form'><input type='hidden' name='form-name' value='form' />
 							<div class="form-group">
 								<input type="text" name="name" id="name" class="form-control" data-validation-required-message="Please, Enter Your Name." required>
 								<label for="name">Your Name</label>
@@ -773,6 +773,29 @@
 		<script src='https://d33wubrfki0l68.cloudfront.net/js/6847dfbd301b82fed3e0e073585b8453a368a304/js/wow.min.js'></script>
 		<script>
 			new WOW().init();
+		</script>
+		<script type="text/javascript">
+		var message = "";
+
+		$(".submit-btn").on("click", function() {
+    		message = $("#form").serialize();
+    		function sendmail(){
+    			return $.ajax({
+        			url: "//formspree.io/abhishek.s14@iiits.in", 
+        			method: "POST",
+        			data: {message: message},
+        			dataType: "json"
+    				});
+    		}
+
+    		sendmail().done(function(result){
+    			alert('Thanks for the email, we\'ll be in touch promptly.' );
+    		}).fail(function(result){
+    			console.log(result);
+    			alert('Sorry ! email couldn\'t be sent. Please try after sometime');
+    		});
+    		return false;
+		});
 		</script>
 	</body>
 </html>
