@@ -13,22 +13,22 @@ $(document).ready(function() {
     $("#mouse").on("click", function() {
         $("html, body").animate({
             scrollTop: $("#about-me").offset().top
-        }, 1e3)
+        }, 1e3);
     });
     $(window).scroll(function() {
         $("#top-nav, #menu").addClass("transition");
         if ($(this).scrollTop() >= 600) {
-            $("#top-nav, #menu").addClass("shown")
+            $("#top-nav, #menu").addClass("shown");
         } else {
-            $("#top-nav, #menu").removeClass("shown")
+            $("#top-nav, #menu").removeClass("shown");
         }
     });
     $("#menu").click(function() {
         $(this).toggleClass("active-menu");
-        $("#side-menu").toggleClass("active-side-menu").children("a").removeClass("selected-item")
+        $("#side-menu").toggleClass("active-side-menu").children("a").removeClass("selected-item");
     });
     $("#side-menu a").on("click", function() {
-        $(this).addClass("selected-item").siblings().removeClass("selected-item")
+        $(this).addClass("selected-item").siblings().removeClass("selected-item");
     });
     $('a[href^="#"]').on("click", function(event) {
         var target = $($(this).attr("href"));
@@ -258,7 +258,7 @@ function init() {
             }, {
                 lightness: 29
             }, {
-                weight: .2
+                weight: 0.2
             }]
         }, {
             featureType: "road.arterial",
