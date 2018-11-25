@@ -604,29 +604,5 @@
 		<script>
 			new WOW().init();
 		</script>
-		<script type="text/javascript">
-		var message = "";
-
-		$(".submit-btn").on("click", function() {
-    		message = $("#form").serialize();
-    		function sendmail(){
-    			return $.ajax({
-        			url: "//formspree.io/abhishek.s14@iiits.in", 
-        			method: "POST",
-        			data: {message: message},
-        			dataType: "jsonp",
-        			crossDomain:true,
-    				});
-    		}
-
-    		sendmail().done(function(result){
-    			alert('Thanks for the email, we\'ll be in touch promptly.' );
-    		}).fail(function(result){
-    			console.log(result);
-    			alert('Sorry ! email couldn\'t be sent. Please try after sometime');
-    		});
-    		return false;
-		});
-		</script>
 	</body>
 </html>
