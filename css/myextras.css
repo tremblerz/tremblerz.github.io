@@ -60,3 +60,60 @@ blockquote:nth-of-type(even) {
 																																		padding: 1em 1em 1em 20%;
 																																			}
 }
+
+
+/* ---------------------------------------
+	Start  Blog Section 
+----------------------------------------- */
+.post-card {
+	max-width: 600px;
+	margin: auto;
+	margin-bottom: 30px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	-webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.post-card:hover {
+	box-shadow: 0 5px 35px rgba(0, 0, 0, 0.15);
+	-webkit-transform: translateY(-5px);
+	-ms-transform: translateY(-5px);
+	transform: translateY(-5px);
+}
+.post-card .post-info {
+	padding: 20px;
+}
+.post-card .post-info .title {
+	margin-top: 0;
+	font-size: 21px;
+}
+.post-card .post-info .meta {
+	padding: 0;
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+.post-card .post-info .meta li {
+	list-style: none;
+	display: inline-block;
+}
+.post-card .post-info .meta a {
+	font-size: 14px;
+	color: #929292;
+	font-weight: 400;
+	margin-right: 20px;
+}
+.post-card .post-info .meta i {
+	margin-right: 2px;
+}
+.post-card .post-info p {
+	font-size: 14px;
+	margin-bottom: 15px;
+}
+
+#custom1 a {
+	color: inherit;
+}
+
+#custom2 a {
+	color: #fff;
+}
