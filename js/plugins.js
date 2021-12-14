@@ -1,15 +1,6 @@
 $(document).ready(function() {
     "use-strict";
     $(".loading").delay(1e3).addClass("loaded");
-    $("html, body").niceScroll({
-        scrollspeed: 40,
-        mousescrollstep: 30,
-        zindex: 9999,
-        cursorwidth: 10,
-        cursorborder: false,
-        cursorborderradius: 0,
-        cursorcolor: "#111"
-    });
     $("#mouse").on("click", function() {
         $("html, body").animate({
             scrollTop: $("#about-me").offset().top
@@ -71,32 +62,6 @@ $(document).ready(function() {
         $("html, body").animate({
             scrollTop: 0
         }, 1200)
-    });
-    $("input, select, textarea").jqBootstrapValidation();
-    $(".contact .form-control").focusout(function() {
-        var textValue = $(this).val();
-        if (textValue === "") {
-            $(this).removeClass("has-value")
-        } else {
-            $(this).addClass("has-value")
-        }
-    });
-    $("#facts").appear(function() {
-        $("#number_1").animateNumber({
-            number: 10000
-        }, 1800);
-        $("#number_2").animateNumber({
-            number: 30
-        }, 1800);
-        $("#number_3").animateNumber({
-            number: 100
-        }, 1800);
-        $("#number_4").animateNumber({
-            number: 200
-        }, 1800)
-    }, {
-        accX: 0,
-        accY: -150
     });
     $("#skills").appear(function() {
         $(".chart").easyPieChart({
@@ -175,136 +140,4 @@ $(document).ready(function() {
         }
     })
 });
-google.maps.event.addDomListener(window, "load", init);
 
-function init() {
-    var mapOptions = {
-        zoom: 17,
-        center: new google.maps.LatLng(30.609788, 32.268555),
-        scrollwheel: false,
-        styles: [{
-            featureType: "all",
-            elementType: "labels.text.fill",
-            stylers: [{
-                saturation: 36
-            }, {
-                color: "#000000"
-            }, {
-                lightness: 40
-            }]
-        }, {
-            featureType: "all",
-            elementType: "labels.text.stroke",
-            stylers: [{
-                visibility: "on"
-            }, {
-                color: "#000000"
-            }, {
-                lightness: 16
-            }]
-        }, {
-            featureType: "all",
-            elementType: "labels.icon",
-            stylers: [{
-                visibility: "off"
-            }]
-        }, {
-            featureType: "administrative",
-            elementType: "geometry.fill",
-            stylers: [{
-                color: "#000000"
-            }, {
-                lightness: 20
-            }]
-        }, {
-            featureType: "administrative",
-            elementType: "geometry.stroke",
-            stylers: [{
-                color: "#000000"
-            }, {
-                lightness: 17
-            }, {
-                weight: 1.2
-            }]
-        }, {
-            featureType: "landscape",
-            elementType: "geometry",
-            stylers: [{
-                color: "#000000"
-            }, {
-                lightness: 20
-            }]
-        }, {
-            featureType: "poi",
-            elementType: "geometry",
-            stylers: [{
-                color: "#000000"
-            }, {
-                lightness: 21
-            }]
-        }, {
-            featureType: "road.highway",
-            elementType: "geometry.fill",
-            stylers: [{
-                color: "#000000"
-            }, {
-                lightness: 17
-            }]
-        }, {
-            featureType: "road.highway",
-            elementType: "geometry.stroke",
-            stylers: [{
-                color: "#000000"
-            }, {
-                lightness: 29
-            }, {
-                weight: 0.2
-            }]
-        }, {
-            featureType: "road.arterial",
-            elementType: "geometry",
-            stylers: [{
-                color: "#000000"
-            }, {
-                lightness: 18
-            }]
-        }, {
-            featureType: "road.local",
-            elementType: "geometry",
-            stylers: [{
-                color: "#000000"
-            }, {
-                lightness: 16
-            }]
-        }, {
-            featureType: "transit",
-            elementType: "geometry",
-            stylers: [{
-                color: "#000000"
-            }, {
-                lightness: 19
-            }]
-        }, {
-            featureType: "water",
-            elementType: "geometry",
-            stylers: [{
-                color: "#000000"
-            }, {
-                lightness: 17
-            }]
-        }]
-    };
-    var mapElement = document.getElementById("map");
-    var map = new google.maps.Map(mapElement, mapOptions);
-    var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(30.609788, 32.268555),
-        map: map,
-        title: "Marqa Studio"
-    });
-    var infowindow = new google.maps.InfoWindow({
-        content: "Marqa Studio"
-    });
-    google.maps.event.addListener(marker, "click", function() {
-        infowindow.open(map, marker)
-    })
-}
